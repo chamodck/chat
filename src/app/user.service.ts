@@ -12,10 +12,14 @@ export class UserService {
   }
 
   getUsers(){
-	let headers = new Headers({ 'token':  this.authService.getToken() });
-    let options = new RequestOptions({ headers: headers });
+	
+  	return this.http.get('/api/users',this.authService.getHTTPHeader())
+  		.map(res => res.json());
+  }
 
-  	return this.http.get('/api/users',options)
+  getAllFriends(){
+
+  	return this.http.get('/api/getAllFriends/'+this.authService.getCurrentUserId(),this.authService.getHTTPHeader())
   		.map(res => res.json());
   }
 

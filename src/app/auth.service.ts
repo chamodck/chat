@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http ,Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
+  currentUser : any=localStorage.getItem("currentUser");
 
   constructor(private http: Http) { }
 
@@ -20,13 +21,12 @@ export class AuthService {
 
   login(user:any){
     return this.http.post('/api/authenticate', user)
-    
     .map(res=> {
       // login successful if there's a jwt token in the response
       if (res.json()) {
 
         if(res.json().success){
-          var currentUser=JSON.stringify({email:res.json().email,username:res.json().username,token:res.json().token}) ;
+          var currentUser=JSON.stringify({_id:res.json()._id,email:res.json().email,username:res.json().username,token:res.json().token}) ;
           this.setToken(currentUser);
           return {success:true,message:'Authentication Successful.'};
         }else{
@@ -53,6 +53,44 @@ export class AuthService {
       return '';
     }
     
+  }
+
+  getCurrentUser(){
+    var user=localStorage.getItem("currentUser");
+    if(user){
+      return JSON.parse(user);
+    }else{
+      return undefined;
+    }
+    
+  }
+
+  getCurrentUserId(){
+    var user=localStorage.getItem("currentUser");
+    if(user){
+      return JSON.parse(user)._id;
+    }else{
+      return '';
+    }
+  }
+
+  isLoggedIn(){
+    var user=localStorage.getItem("currentUser");
+    if(user){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  removeToken(){
+    localStorage.removeItem("currentUser");
+  }
+
+  getHTTPHeader(){
+    let headers = new Headers({ 'token':  this.getToken() });
+    let options = new RequestOptions({ headers: headers });
+    return options;
   }
   
 }

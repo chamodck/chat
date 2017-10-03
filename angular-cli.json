@@ -18,10 +18,10 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "css/bootstrap.min.css",
+        
         "styles.css"
       ],
-      "scripts": ["js/jquery.min.js","js/bootstrap.min.js"],
+      "scripts": ["../node_modules/hammerjs/hammer.min.js"],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

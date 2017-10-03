@@ -1,6 +1,4 @@
-/**
- * Created by chamod on 15-Dec-16.
- */
+
 var mongoose = require('mongoose');
 
 var MessageSchema = new mongoose.Schema({
@@ -10,4 +8,5 @@ var MessageSchema = new mongoose.Schema({
     created_at : { type : Date, default: Date.now }
 });
 
-mongoose.model('Message', MessageSchema);
+
+module.exports = mongoose.model('Message', MessageSchema);

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 var jwt    = require('jsonwebtoken');
 var User   = require('../models/users');
+//var Message   = require('../models/Messages');
+var MessageGroup   = require('../models/MessageGroups');
 var config = require('../config'); // get our config file
 
 
@@ -36,7 +38,8 @@ router.post('/authenticate', function(req, res) {
           message: 'Authentication successful.',
           token: token,
           email:user.email,
-          username:user.username
+          username:user.username,
+          _id:user._id
         });
       }   
 
@@ -95,15 +98,133 @@ router.use(function(req, res, next) {
   }
 });
 
-//GET api listing. 
-// router.get('/', (req, res) => {
-//   res.send('api works');
-// });
-
 router.get('/users', function(req, res) {
   User.find({}, function(err, users) {
     res.json(users);
   });
 });  
+
+router.param('currentUserID', function(req, res, next, id) {
+  req.currentUserID = id;
+  return next();
+});
+
+router.get('/getAllFriends/:currentUserID', function(req, res, next) {
+    User
+      .findById(req.currentUserID)
+      .populate('friends._id') // only works if we pushed refs to children
+      .exec(function (err, user) {
+        //if (err) return handleError(err);
+        if (err) { return next(err); }
+        res.json(user);
+      })
+});
+
+router.param('friend', function(req, res, next, id) {
+    var query = User.findById(id);
+
+    query.exec(function (err, friend){
+      if (err) { return next(err); }
+      if (!friend) { return next(new Error('can\'t find user')); }
+
+      req.friend = friend;
+
+      return next();
+
+    });
+  });
+
+  router.param('currentUser', function(req, res, next, id) {
+    var query = User.findById(id);
+
+    query.exec(function (err, currentUser){
+      if (err) { return next(err); }
+      if (!currentUser) { return next(new Error('can\'t find user')); }
+
+      req.currentUser = currentUser;
+
+      return next();
+
+    });
+  });
+
+  
+
+  function  addChat(req, res) {
+    
+    var currentUser=req.currentUser;
+    var friend=req.friend;
+    console.log(currentUser);
+    
+    
+    var Group=new MessageGroup({
+      type:'private',
+      friendname1:currentUser.username,
+      friendname2:friend.username,
+      members:[currentUser,friend],
+      messages:[],
+      name : ''
+    });
+
+    console.log(Group);
+
+    Group.save(function(err, group) {
+      if(err){ return next(err); }
+      Group=group;
+    });
+
+    currentUser.messageGroups.push(Group);
+    //currentUser.friends.push(friend);
+    currentUser.save(function(err, user) {
+      if(err){ return next(err); }
+      
+    });
+
+    friend.messageGroups.push(Group);
+    //friend.friends.push(currentUser);
+    friend.save(function(err, user) {
+      if(err){ return next(err); }
+    });
+    
+    //res.json(Group);
+
+    res.json(Group);
+  };
+
+  //router.put('/addAsFriend/:friend/:currentUser',addChat);
+
+  router.put('/createNewMessageGroup/:friend/:currentUser', function(req, res, next) {
+    var currentUser=req.currentUser;
+    var friend=req.friend;
+    //console.log(currentUser);
+    
+    
+    var Group=new MessageGroup({
+      type:'private',
+      friendname1:currentUser.username,
+      friendname2:friend.username,
+      members:[currentUser,friend],
+      messages:[],
+      name : ''
+    });
+
+    Group.save(function(err, group) {
+      if(err){ return next(err); }
+      Group=group;
+    });
+
+    currentUser.messageGroups.push(Group);
+    currentUser.save(function(err, user) {
+      if(err){ return next(err); }
+      
+    });
+
+    friend.messageGroups.push(Group);
+    friend.save(function(err, user) {
+      if(err){ return next(err); }
+    });
+    
+    res.json(Group);
+  });
 
 module.exports = router;
