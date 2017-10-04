@@ -3,7 +3,7 @@ import { AuthService } from '../auth.service';
 import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
 
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+// const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 
 @Component({
@@ -22,10 +22,11 @@ export class LoginComponent {
   	ngOnInit() {
   	}
 
-    emailFormControl = new FormControl('', [Validators.required,Validators.pattern(EMAIL_REGEX)]);
-    passwordFormControl = new FormControl('', [Validators.required]);
+    // emailFormControl = new FormControl('', [Validators.required,Validators.pattern(EMAIL_REGEX)]);
+    // passwordFormControl = new FormControl('', [Validators.required]);
 
   	login() {
+      console.log(this.model);
     	this.authService.login(this.model)
     	.subscribe(
       		data => {

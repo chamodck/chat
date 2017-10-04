@@ -9,28 +9,32 @@
 
     <div class="blocks" fxFlex="50" >  
       <h2 class="mat-display-1">Login</h2>
-      <form class="example-form" (ngSubmit)="login()">
+      <form class="example-form" (ngSubmit)="login()" #loginForm="ngForm">
         <md-form-field class="example-full-width">
-          <input mdInput placeholder="Email" [formControl]="emailFormControl"  [(ngModel)]="model.email" >
-          <md-error *ngIf="emailFormControl.hasError('pattern')">
+          <input mdInput placeholder="Email"  #email="ngModel" required name="email"
+           [(ngModel)]="model.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+
+          <md-error *ngIf="email.errors && email.errors.pattern">
             Please enter a valid email address
           </md-error>
-          <md-error *ngIf="emailFormControl.hasError('required')">
+          <md-error *ngIf="email.errors && email.errors.required">
             Email is <strong>required</strong>
           </md-error>
         </md-form-field>
 
         <md-form-field class="example-full-width">
-          <input mdInput type="password" placeholder="Password" [formControl]="passwordFormControl" [(ngModel)]="model.password" >
+          <input mdInput type="password" placeholder="Password"  name="password"
+           #password="ngModel" required
+          [(ngModel)]="model.password" >
           
-          <md-error *ngIf="passwordFormControl.hasError('required')">
+          <md-error *ngIf="password.errors && password.errors.required">
             Password is <strong>required</strong>
           </md-error>
         </md-form-field>
 
         <div class="button-row">
           
-          <button md-raised-button color="primary">Login</button>
+          <button md-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Login</button>
           
         </div>
       </form>

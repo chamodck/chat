@@ -1,7 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,MatInputModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,MatInputModule,MatListModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 // Define the routes
@@ -58,8 +58,8 @@ const ROUTES = [
     MdToolbarModule,
     MdIconModule,
     MatInputModule,
-    ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
   ],
   providers: [
     AuthService,

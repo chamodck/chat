@@ -41,4 +41,8 @@ export class IndexComponent implements OnInit {
           console.log(error);
       });
   } 
+
+  click1(){
+    console.log('gf');
+  }
 }
