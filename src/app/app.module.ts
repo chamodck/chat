@@ -1,9 +1,8 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
@@ -12,11 +11,9 @@ import { MessageService } from './message.service';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,MatInputModule,MatListModule } from '@angular/material';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 // Define the routes
 const ROUTES = [
   {
@@ -52,20 +49,16 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdCardModule,
-    MdToolbarModule,
-    MdIconModule,
-    MatInputModule,
-    FlexLayoutModule,
-    MatListModule
+    
+    
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     AuthService,
     UserService,
     MessageService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

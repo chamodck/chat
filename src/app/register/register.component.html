@@ -1,48 +1,57 @@
-<div class="container">
-  <div fxLayout="row"
-       fxLayout.xs="column"
-       fxLayout.sm="column"
-       fxFlex class="contentResp">
-    <div class="blocks" fxFlex="25" >  </div>
+<!-- Main -->
+<main>
+    <div class="container" >
+    <div class="row mt-5 pt-5 justify-content-md-center">
+            <div class="col-md-6 ">
+      <!-- Login form -->
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+          <p class="h5 text-center mb-4">Sign up</p>
 
-    <div class="blocks" fxFlex="50" >  
-      <h2 class="mat-display-1">Register</h2>
-      <form class="example-form" (ngSubmit)="register()" #registerForm="ngForm">
-        <md-form-field class="example-full-width">
-          <input mdInput placeholder="Email"   [(ngModel)]="model.email"  name="email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #email="ngModel">
-          <md-error *ngIf="email.errors && email.errors.pattern">
-            Please enter a valid email address
-          </md-error>
-          <md-error *ngIf="email.errors && email.errors.required">
-            Email is <strong>required</strong>
-          </md-error>
-        </md-form-field>
+          <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              
+              <input   #email="ngModel" type="text" required name="email" id="email" class="form-control"
+              [(ngModel)]="model.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" mdbActive >
+              <label for="email" class="active">Your email</label>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" >
 
-        <md-form-field class="example-full-width">
-          <input mdInput placeholder="Username" [(ngModel)]="model.username" required
-           #username="ngModel" name="username">
-          <md-error *ngIf="username.errors && username.errors.required">
-            Username is <strong>required</strong>
-          </md-error>
-        </md-form-field>
+                <small *ngIf="email.errors.required" class="text-danger">Email is required.</small>
+                
+                <small *ngIf="email.errors.pattern" class="text-danger">Please enter a valid email address.</small>
 
-        <md-form-field class="example-full-width">
-          <input mdInput type="password" placeholder="Password"  required #password="ngModel" name="password"
-           [(ngModel)]="model.password" >
-          
-          <md-error *ngIf="password.errors && password.errors.required" >
-            Password is <strong>required</strong>
-          </md-error>
-        </md-form-field>
+              </div>
+          </div>
 
-        <div class="button-row">
-          
-          <button type="submit" md-raised-button color="primary" [disabled]="!registerForm.form.valid">Register</button>
-          
-        </div>
+          <div class="md-form">
+              <i class="fa fa-user prefix grey-text"></i>
+              
+              <input   #username="ngModel" type="text" required name="username" id="username" class="form-control"
+              [(ngModel)]="model.username"  mdbActive >
+              <label for="username" class="active">Your username</label>
+              
+              
+               <small *ngIf="username.invalid && (username.dirty || username.touched) && username.errors.required" class="text-danger">Password is required.</small>
+          </div>
+
+          <div class="md-form">
+              <i class="fa fa-lock prefix grey-text"></i>
+              <input  type="password"  name="password" id="password"
+               #password="ngModel" required class="form-control"
+              [(ngModel)]="model.password" mdbActive>
+              <label for="password">Your password</label>
+              
+               <small *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required" class="text-danger">Password is required.</small>
+          </div>
+
+          <div class="text-center">
+              <button class="btn btn-default waves-light" mdbRippleRadius type="submit" 
+              [disabled]="!registerForm.form.valid">Login</button>
+          </div>
       </form>
+      <!-- Login form -->
+
+      </div>
+      </div>
     </div>
-    <div class="blocks" fxFlex> </div>
-  </div>
-</div>
+</main>
+<!-- /.Main -->

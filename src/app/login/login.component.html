@@ -1,44 +1,56 @@
+<!-- Main -->
+<main>
+    <div class="container" >
+    <div class="row mt-5 pt-5 justify-content-md-center">
+            <div class="col-md-6 ">
+      <!-- Login form -->
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+          <p class="h5 text-center mb-4">Sign in</p>
 
+          <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              
+              <input   #email="ngModel" type="text" required name="email" id="email" class="form-control"
+              [(ngModel)]="model.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" mdbActive >
+              <label for="email" >Your email</label>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" >
 
-<div class="container">
-  <div fxLayout="row"
-       fxLayout.xs="column"
-       fxLayout.sm="column"
-       fxFlex class="contentResp">
-    <div class="blocks" fxFlex="25" >  </div>
+                <small *ngIf="email.errors.required" class="text-danger">Email is required.</small>
+                
+                <small *ngIf="email.errors.pattern" class="text-danger">Please enter a valid email address.</small>
 
-    <div class="blocks" fxFlex="50" >  
-      <h2 class="mat-display-1">Login</h2>
-      <form class="example-form" (ngSubmit)="login()" #loginForm="ngForm">
-        <md-form-field class="example-full-width">
-          <input mdInput placeholder="Email"  #email="ngModel" required name="email"
-           [(ngModel)]="model.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+              </div>
+          </div>
 
-          <md-error *ngIf="email.errors && email.errors.pattern">
-            Please enter a valid email address
-          </md-error>
-          <md-error *ngIf="email.errors && email.errors.required">
-            Email is <strong>required</strong>
-          </md-error>
-        </md-form-field>
+          <div class="md-form">
+              <i class="fa fa-lock prefix grey-text"></i>
+              <!-- <input type="password" id="defaultForm-pass" class="form-control" mdbActive> -->
+              <input  type="password"  name="password" id="password"
+               #password="ngModel" required class="form-control"
+              [(ngModel)]="model.password" mdbActive>
+              <label for="password">Your password</label>
+              
+             
 
-        <md-form-field class="example-full-width">
-          <input mdInput type="password" placeholder="Password"  name="password"
-           #password="ngModel" required
-          [(ngModel)]="model.password" >
-          
-          <md-error *ngIf="password.errors && password.errors.required">
-            Password is <strong>required</strong>
-          </md-error>
-        </md-form-field>
+                <small *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required" class="text-danger">Password is required.</small>
+               
+             
+          </div>
 
-        <div class="button-row">
-          
-          <button md-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Login</button>
-          
-        </div>
+          <div class="text-center">
+              <div><small *ngIf="error" class="text-danger">{{error}}</small></div>
+              <button class="btn btn-default waves-light" mdbRippleRadius type="submit" [disabled]="!loginForm.form.valid">Sign in</button>
+          </div>
       </form>
+      <!-- Login form -->
+      <div class="modal-footer">
+                    <div class="options">
+                        <p>Not a member? <a [routerLink]="['/register']">Sign Up</a></p>
+                        <p>Forgot <a href="#">Password?</a></p>
+                    </div>
+                </div>
+      </div>
+      </div>
     </div>
-    <div class="blocks" fxFlex> </div>
-  </div>
-</div>
+</main>
+<!-- /.Main -->
