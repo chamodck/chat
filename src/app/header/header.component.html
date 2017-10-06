@@ -17,18 +17,18 @@
                 <a class="nav-link">Opinions</a>
             </li>
         </ul> -->
-        <ul class="navbar-nav nav-flex-icons">
+        <ul class="navbar-nav">
             <li *ngIf="currentUser" class="nav-item waves-light" mdbRippleRadius>
                 <a class="nav-link" (click)="logout()">Logout</a>
             </li>
            
             <li *ngIf="!currentUser" class="nav-item waves-light" mdbRippleRadius>
-                <a [routerLink]="['/login']" class="nav-link">
+                <a [routerLink]="['/login']" class="nav-link ">
 				  Sign in
 				</a>
             </li>
             <li *ngIf="!currentUser" class="nav-item waves-light" mdbRippleRadius>
-                <a [routerLink]="['/register']" class="nav-link">
+                <a [routerLink]="['/register']" class="nav-link " >
 				  Sign up
 				</a>
             </li>

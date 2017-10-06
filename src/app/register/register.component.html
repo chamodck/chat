@@ -30,17 +30,30 @@
               <label for="username" class="active">Your username</label>
               
               
-               <small *ngIf="username.invalid && (username.dirty || username.touched) && username.errors.required" class="text-danger">Password is required.</small>
+               <small *ngIf="username.invalid && (username.dirty || username.touched) && username.errors.required" class="text-danger">Username is required.</small>
           </div>
 
           <div class="md-form">
               <i class="fa fa-lock prefix grey-text"></i>
-              <input  type="password"  name="password" id="password"
+              <input  type="password"  name="password" id="password" validateEqual="confirmPassword"
                #password="ngModel" required class="form-control"
               [(ngModel)]="model.password" mdbActive>
               <label for="password">Your password</label>
               
                <small *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required" class="text-danger">Password is required.</small>
+          </div>
+
+          <div class="md-form">
+              <i class="fa fa-lock prefix grey-text"></i>
+              <input  type="password"  name="confirmPassword" id="confirmPassword"  validateEqual="password"
+               #confirmPassword="ngModel" required class="form-control" [(ngModel)]="model.confirmPassword"
+               mdbActive>
+              <label for="confirmPassword">Confirm password</label>
+              
+               <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.required" class="text-danger">Confirm Password is required.</small>
+
+               <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.validateEqual" class="text-danger">Password mismatch.</small>
+
           </div>
 
           <div class="text-center">

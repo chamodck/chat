@@ -13,6 +13,7 @@ import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { EqualValidatorDirective } from './equal-validator.directive';
 
 // Define the routes
 const ROUTES = [
@@ -41,7 +42,8 @@ const ROUTES = [
     RegisterComponent,
     LoginComponent,
     IndexComponent,
-    HeaderComponent
+    HeaderComponent,
+    EqualValidatorDirective
   ],
   imports: [
     BrowserModule,

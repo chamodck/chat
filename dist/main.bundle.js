@@ -40,7 +40,7 @@ var MessageService = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/message.service.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/message.service.js.map
 
 /***/ }),
 
@@ -88,7 +88,7 @@ var UserService = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/user.service.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/user.service.js.map
 
 /***/ }),
 
@@ -113,7 +113,7 @@ webpackEmptyContext.id = 204;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(236);
 
 
@@ -123,7 +123,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/main.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/main.js.map
 
 /***/ }),
 
@@ -154,8 +154,8 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(410),
-            styles: [__webpack_require__(405)]
+            template: __webpack_require__(411),
+            styles: [__webpack_require__(406)]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object])
     ], AppComponent);
@@ -163,7 +163,7 @@ var AppComponent = /** @class */ (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/app.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/app.component.js.map
 
 /***/ }),
 
@@ -171,21 +171,22 @@ var AppComponent = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__register_register_component__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__register_register_component__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__auth_service__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__user_service__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__message_service__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_login_component__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__index_index_component__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__header_header_component__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_login_component__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__index_index_component__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__header_header_component__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular_bootstrap_md__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__equal_validator_directive__ = __webpack_require__(237);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -193,6 +194,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -238,7 +240,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__register_register_component__["a" /* RegisterComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__login_login_component__["a" /* LoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__index_index_component__["a" /* IndexComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__header_header_component__["a" /* HeaderComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__equal_validator_directive__["a" /* EqualValidatorDirective */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -260,7 +263,7 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/app.module.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/app.module.js.map
 
 /***/ }),
 
@@ -268,9 +271,67 @@ var AppModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EqualValidatorDirective; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var EqualValidatorDirective = /** @class */ (function () {
+    function EqualValidatorDirective(validateEqual) {
+        this.validateEqual = validateEqual;
+    }
+    EqualValidatorDirective_1 = EqualValidatorDirective;
+    EqualValidatorDirective.prototype.validate = function (c) {
+        // self value
+        var v = c.value;
+        // control vlaue
+        var e = c.root.get(this.validateEqual);
+        // value not equal
+        if (e && v !== e.value) {
+            return {
+                validateEqual: { valid: false }
+            };
+        }
+        console.log('success');
+        return null;
+    };
+    EqualValidatorDirective = EqualValidatorDirective_1 = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* Directive */])({
+            selector: '[validateEqual][ngModel]',
+            providers: [
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_forms__["b" /* NG_VALIDATORS */], useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* forwardRef */])(function () { return EqualValidatorDirective_1; }), multi: true }
+            ]
+        }),
+        __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Attribute */])('validateEqual')),
+        __metadata("design:paramtypes", [String])
+    ], EqualValidatorDirective);
+    return EqualValidatorDirective;
+    var EqualValidatorDirective_1;
+}());
+
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/equal-validator.directive.js.map
+
+/***/ }),
+
+/***/ 238:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(44);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -306,8 +367,8 @@ var HeaderComponent = /** @class */ (function () {
     HeaderComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
             selector: 'app-header',
-            template: __webpack_require__(411),
-            styles: [__webpack_require__(406)]
+            template: __webpack_require__(412),
+            styles: [__webpack_require__(407)]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
     ], HeaderComponent);
@@ -315,11 +376,11 @@ var HeaderComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/header.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/header.component.js.map
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -327,7 +388,7 @@ var HeaderComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_service__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__message_service__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(44);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IndexComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -381,8 +442,8 @@ var IndexComponent = /** @class */ (function () {
     IndexComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
             selector: 'app-index',
-            template: __webpack_require__(412),
-            styles: [__webpack_require__(407)]
+            template: __webpack_require__(413),
+            styles: [__webpack_require__(408)]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__message_service__["a" /* MessageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__message_service__["a" /* MessageService */]) === "function" && _d || Object])
     ], IndexComponent);
@@ -390,17 +451,17 @@ var IndexComponent = /** @class */ (function () {
     var _a, _b, _c, _d;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/index.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/index.component.js.map
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(44);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -447,8 +508,8 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
             selector: 'app-login',
-            template: __webpack_require__(413),
-            styles: [__webpack_require__(408)]
+            template: __webpack_require__(414),
+            styles: [__webpack_require__(409)]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
     ], LoginComponent);
@@ -456,17 +517,17 @@ var LoginComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/login.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/login.component.js.map
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_service__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(44);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -501,8 +562,8 @@ var RegisterComponent = /** @class */ (function () {
     RegisterComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
             selector: 'app-register',
-            template: __webpack_require__(414),
-            styles: [__webpack_require__(409)]
+            template: __webpack_require__(415),
+            styles: [__webpack_require__(410)]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
     ], RegisterComponent);
@@ -510,11 +571,11 @@ var RegisterComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/register.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/register.component.js.map
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -526,7 +587,7 @@ var RegisterComponent = /** @class */ (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/environment.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/environment.js.map
 
 /***/ }),
 
@@ -641,14 +702,7 @@ var AuthService = /** @class */ (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/auth.service.js.map
-
-/***/ }),
-
-/***/ 405:
-/***/ (function(module, exports) {
-
-module.exports = ""
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/auth.service.js.map
 
 /***/ }),
 
@@ -683,39 +737,46 @@ module.exports = ""
 /***/ 410:
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\r\n<router-outlet></router-outlet>"
+module.exports = ""
 
 /***/ }),
 
 /***/ 411:
 /***/ (function(module, exports) {
 
-module.exports = "<mdb-navbar SideClass=\"navbar fixed-top navbar-expand-lg navbar-dark bg-default scrolling-navbar\" [containerInside]=\"false\">\r\n    <logo>\r\n        <a class=\"logo navbar-brand\" href=\"#\"><strong>Navbar</strong></a>\r\n    </logo>\r\n    <links>\r\n        <!-- <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item active waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Features</a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Pricing</a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Opinions</a>\r\n            </li>\r\n        </ul> -->\r\n        <ul class=\"navbar-nav nav-flex-icons\">\r\n            <li *ngIf=\"currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\" (click)=\"logout()\">Logout</a>\r\n            </li>\r\n           \r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/login']\" class=\"nav-link\">\r\n\t\t\t\t  Sign in\r\n\t\t\t\t</a>\r\n            </li>\r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/register']\" class=\"nav-link\">\r\n\t\t\t\t  Sign up\r\n\t\t\t\t</a>\r\n            </li>\r\n        </ul>\r\n    </links>\r\n</mdb-navbar>\r\n\r\n\r\n\t\t\t\t\t\r\n<!--   <button *ngIf=\"currentUser\" (click)=\"logout()\" > Logout </button>\r\n  <button *ngIf=\"!currentUser\" (click)=\"login()\" > Login </button>\r\n  <button *ngIf=\"!currentUser\" (click)=\"register()\" > Register </button> -->\r\n "
+module.exports = "<app-header></app-header>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 412:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<mdb-navbar SideClass=\"navbar fixed-top navbar-expand-lg navbar-dark bg-default scrolling-navbar\" [containerInside]=\"false\">\r\n    <logo>\r\n        <a class=\"logo navbar-brand\" href=\"#\"><strong>Navbar</strong></a>\r\n    </logo>\r\n    <links>\r\n        <!-- <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item active waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Features</a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Pricing</a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Opinions</a>\r\n            </li>\r\n        </ul> -->\r\n        <ul class=\"navbar-nav\">\r\n            <li *ngIf=\"currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\" (click)=\"logout()\">Logout</a>\r\n            </li>\r\n           \r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/login']\" class=\"nav-link \">\r\n\t\t\t\t  Sign in\r\n\t\t\t\t</a>\r\n            </li>\r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/register']\" class=\"nav-link \" >\r\n\t\t\t\t  Sign up\r\n\t\t\t\t</a>\r\n            </li>\r\n        </ul>\r\n    </links>\r\n</mdb-navbar>\r\n\r\n\r\n\t\t\t\t\t\r\n<!--   <button *ngIf=\"currentUser\" (click)=\"logout()\" > Logout </button>\r\n  <button *ngIf=\"!currentUser\" (click)=\"login()\" > Login </button>\r\n  <button *ngIf=\"!currentUser\" (click)=\"register()\" > Register </button> -->\r\n "
 
 /***/ }),
 
 /***/ 413:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row mt-5 pt-5 justify-content-md-center\">\r\n            <div class=\"col-md-6 \">\r\n      <!-- Login form -->\r\n      <form (ngSubmit)=\"login()\" #loginForm=\"ngForm\">\r\n          <p class=\"h5 text-center mb-4\">Sign in</p>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n              \r\n              <input   #email=\"ngModel\" type=\"text\" required name=\"email\" id=\"email\" class=\"form-control\"\r\n              [(ngModel)]=\"model.email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\" mdbActive >\r\n              <label for=\"email\" >Your email</label>\r\n              <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" >\r\n\r\n                <small *ngIf=\"email.errors.required\" class=\"text-danger\">Email is required.</small>\r\n                \r\n                <small *ngIf=\"email.errors.pattern\" class=\"text-danger\">Please enter a valid email address.</small>\r\n\r\n              </div>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <!-- <input type=\"password\" id=\"defaultForm-pass\" class=\"form-control\" mdbActive> -->\r\n              <input  type=\"password\"  name=\"password\" id=\"password\"\r\n               #password=\"ngModel\" required class=\"form-control\"\r\n              [(ngModel)]=\"model.password\" mdbActive>\r\n              <label for=\"password\">Your password</label>\r\n              \r\n             \r\n\r\n                <small *ngIf=\"password.invalid && (password.dirty || password.touched) && password.errors.required\" class=\"text-danger\">Password is required.</small>\r\n               \r\n             \r\n          </div>\r\n\r\n          <div class=\"text-center\">\r\n              <div><small *ngIf=\"error\" class=\"text-danger\">{{error}}</small></div>\r\n              <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" [disabled]=\"!loginForm.form.valid\">Sign in</button>\r\n          </div>\r\n      </form>\r\n      <!-- Login form -->\r\n      <div class=\"modal-footer\">\r\n                    <div class=\"options\">\r\n                        <p>Not a member? <a [routerLink]=\"['/register']\">Sign Up</a></p>\r\n                        <p>Forgot <a href=\"#\">Password?</a></p>\r\n                    </div>\r\n                </div>\r\n      </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
+module.exports = ""
 
 /***/ }),
 
 /***/ 414:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row mt-5 pt-5 justify-content-md-center\">\r\n            <div class=\"col-md-6 \">\r\n      <!-- Login form -->\r\n      <form (ngSubmit)=\"register()\" #registerForm=\"ngForm\">\r\n          <p class=\"h5 text-center mb-4\">Sign up</p>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n              \r\n              <input   #email=\"ngModel\" type=\"text\" required name=\"email\" id=\"email\" class=\"form-control\"\r\n              [(ngModel)]=\"model.email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\" mdbActive >\r\n              <label for=\"email\" class=\"active\">Your email</label>\r\n              <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" >\r\n\r\n                <small *ngIf=\"email.errors.required\" class=\"text-danger\">Email is required.</small>\r\n                \r\n                <small *ngIf=\"email.errors.pattern\" class=\"text-danger\">Please enter a valid email address.</small>\r\n\r\n              </div>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-user prefix grey-text\"></i>\r\n              \r\n              <input   #username=\"ngModel\" type=\"text\" required name=\"username\" id=\"username\" class=\"form-control\"\r\n              [(ngModel)]=\"model.username\"  mdbActive >\r\n              <label for=\"username\" class=\"active\">Your username</label>\r\n              \r\n              \r\n               <small *ngIf=\"username.invalid && (username.dirty || username.touched) && username.errors.required\" class=\"text-danger\">Password is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"password\" id=\"password\"\r\n               #password=\"ngModel\" required class=\"form-control\"\r\n              [(ngModel)]=\"model.password\" mdbActive>\r\n              <label for=\"password\">Your password</label>\r\n              \r\n               <small *ngIf=\"password.invalid && (password.dirty || password.touched) && password.errors.required\" class=\"text-danger\">Password is required.</small>\r\n          </div>\r\n\r\n          <div class=\"text-center\">\r\n              <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" \r\n              [disabled]=\"!registerForm.form.valid\">Login</button>\r\n          </div>\r\n      </form>\r\n      <!-- Login form -->\r\n\r\n      </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
+module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row mt-5 pt-5 justify-content-md-center\">\r\n            <div class=\"col-md-6 \">\r\n      <!-- Login form -->\r\n      <form (ngSubmit)=\"login()\" #loginForm=\"ngForm\">\r\n          <p class=\"h5 text-center mb-4\">Sign in</p>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n              \r\n              <input   #email=\"ngModel\" type=\"text\" required name=\"email\" id=\"email\" class=\"form-control\"\r\n              [(ngModel)]=\"model.email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\" mdbActive >\r\n              <label for=\"email\" >Your email</label>\r\n              <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" >\r\n\r\n                <small *ngIf=\"email.errors.required\" class=\"text-danger\">Email is required.</small>\r\n                \r\n                <small *ngIf=\"email.errors.pattern\" class=\"text-danger\">Please enter a valid email address.</small>\r\n\r\n              </div>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <!-- <input type=\"password\" id=\"defaultForm-pass\" class=\"form-control\" mdbActive> -->\r\n              <input  type=\"password\"  name=\"password\" id=\"password\"\r\n               #password=\"ngModel\" required class=\"form-control\"\r\n              [(ngModel)]=\"model.password\" mdbActive>\r\n              <label for=\"password\">Your password</label>\r\n              \r\n             \r\n\r\n                <small *ngIf=\"password.invalid && (password.dirty || password.touched) && password.errors.required\" class=\"text-danger\">Password is required.</small>\r\n               \r\n             \r\n          </div>\r\n\r\n          <div class=\"text-center\">\r\n              <div><small *ngIf=\"error\" class=\"text-danger\">{{error}}</small></div>\r\n              <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" [disabled]=\"!loginForm.form.valid\">Sign in</button>\r\n          </div>\r\n      </form>\r\n      <!-- Login form -->\r\n      <div class=\"modal-footer\">\r\n                    <div class=\"options\">\r\n                        <p>Not a member? <a [routerLink]=\"['/register']\">Sign Up</a></p>\r\n                        <p>Forgot <a href=\"#\">Password?</a></p>\r\n                    </div>\r\n                </div>\r\n      </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
 
 /***/ }),
 
-/***/ 472:
+/***/ 415:
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row mt-5 pt-5 justify-content-md-center\">\r\n            <div class=\"col-md-6 \">\r\n      <!-- Login form -->\r\n      <form (ngSubmit)=\"register()\" #registerForm=\"ngForm\">\r\n          <p class=\"h5 text-center mb-4\">Sign up</p>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n              \r\n              <input   #email=\"ngModel\" type=\"text\" required name=\"email\" id=\"email\" class=\"form-control\"\r\n              [(ngModel)]=\"model.email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\" mdbActive >\r\n              <label for=\"email\" class=\"active\">Your email</label>\r\n              <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" >\r\n\r\n                <small *ngIf=\"email.errors.required\" class=\"text-danger\">Email is required.</small>\r\n                \r\n                <small *ngIf=\"email.errors.pattern\" class=\"text-danger\">Please enter a valid email address.</small>\r\n\r\n              </div>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-user prefix grey-text\"></i>\r\n              \r\n              <input   #username=\"ngModel\" type=\"text\" required name=\"username\" id=\"username\" class=\"form-control\"\r\n              [(ngModel)]=\"model.username\"  mdbActive >\r\n              <label for=\"username\" class=\"active\">Your username</label>\r\n              \r\n              \r\n               <small *ngIf=\"username.invalid && (username.dirty || username.touched) && username.errors.required\" class=\"text-danger\">Username is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"password\" id=\"password\" validateEqual=\"confirmPassword\"\r\n               #password=\"ngModel\" required class=\"form-control\"\r\n              [(ngModel)]=\"model.password\" mdbActive>\r\n              <label for=\"password\">Your password</label>\r\n              \r\n               <small *ngIf=\"password.invalid && (password.dirty || password.touched) && password.errors.required\" class=\"text-danger\">Password is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"confirmPassword\" id=\"confirmPassword\"  validateEqual=\"password\"\r\n               #confirmPassword=\"ngModel\" required class=\"form-control\" [(ngModel)]=\"model.confirmPassword\"\r\n               mdbActive>\r\n              <label for=\"confirmPassword\">Confirm password</label>\r\n              \r\n               <small *ngIf=\"confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.required\" class=\"text-danger\">Confirm Password is required.</small>\r\n\r\n               <small *ngIf=\"confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.validateEqual\" class=\"text-danger\">Password mismatch.</small>\r\n\r\n          </div>\r\n\r\n          <div class=\"text-center\">\r\n              <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" \r\n              [disabled]=\"!registerForm.form.valid\">Login</button>\r\n          </div>\r\n      </form>\r\n      <!-- Login form -->\r\n\r\n      </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
+
+/***/ }),
+
+/***/ 473:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(205);
@@ -723,5 +784,5 @@ module.exports = __webpack_require__(205);
 
 /***/ })
 
-},[472]);
+},[473]);
 //# sourceMappingURL=main.bundle.map
