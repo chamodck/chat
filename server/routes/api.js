@@ -49,21 +49,29 @@ router.post('/authenticate', function(req, res) {
 });
 
 router.post('/register', function(req, res) {
+  User.find({email:req.body.email}, function(err, users) {
+    if (err) return handleError(err);
+
+    if(users.length){
+      res.json({ success: false,message:'Sign up failed.Email is already taken.' });
+    }else{
+      //create a sample user
+      var user = new User({ 
+        email: req.body.email,
+        username:req.body.username,
+      });
+      user.password=user.generateHash(req.body.password);
+
+      //save the sample user
+      user.save(function(err) {
+        if (err) throw err;
+
+        
+        res.json({ success: true });
+      });
+    }
+  });
   
-  //create a sample user
-  var user = new User({ 
-    email: req.body.email,
-    username:req.body.username,
-  });
-  user.password=user.generateHash(req.body.password);
-
-  //save the sample user
-  user.save(function(err) {
-    if (err) throw err;
-
-    console.log('User saved successfully');
-    res.json({ success: true });
-  });
 });
 
 // route middleware to verify a token
@@ -112,11 +120,27 @@ router.param('currentUserID', function(req, res, next, id) {
 router.get('/getAllFriends/:currentUserID', function(req, res, next) {
     User
       .findById(req.currentUserID)
-      .populate('friends._id') // only works if we pushed refs to children
+      .populate('messageGroups') // only works if we pushed refs to children
       .exec(function (err, user) {
         //if (err) return handleError(err);
         if (err) { return next(err); }
         res.json(user);
+      })
+});
+
+router.param('messageGroupID', function(req, res, next, id) {
+  req.messageGroupID = id;
+  return next();
+});
+
+router.get('/getMessageGroup/:messageGroupID', function(req, res, next) {
+    MessageGroup
+      .findById(req.messageGroupID)
+      .populate('members','messages') // only works if we pushed refs to children
+      .exec(function (err, messageGroup) {
+        //if (err) return handleError(err);
+        if (err) { return next(err); }
+        res.json(messageGroup);
       })
 });
 

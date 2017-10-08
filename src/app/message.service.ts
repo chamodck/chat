@@ -13,4 +13,9 @@ export class MessageService {
   		.map(res => res.json());
   }
 
+  getMessageGroup(id){
+  	return this.http.get('/api/getMessageGroup/'+id,this.authService.getHTTPHeader())
+  		.map(res => res.json());
+  }
+
 }

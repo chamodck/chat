@@ -10,18 +10,20 @@ import {Router} from '@angular/router';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  users: any[] = [];
-
   constructor(private userService: UserService,private authService: AuthService,
     private router: Router,private messageService: MessageService) { }
+
+  messageGroups: any[] = [];
+  currentUser:any=this.authService.getCurrentUser();
+  messageText:String = '';
+  messageGroup:any=undefined;
 
   ngOnInit() {
   	// get users from secure api end point
     if(this.authService.isLoggedIn()){
-      this.userService.getUsers()
+      this.userService.getAllFriends()
         .subscribe(users => {
-            this.users = users;
-            console.log(users);
+            this.messageGroups = users.messageGroups;
         },
         error => {
           console.log(error);
@@ -42,7 +44,20 @@ export class IndexComponent implements OnInit {
       });
   } 
 
-  click1(){
-    console.log('gf');
+  selectChat(chatId){
+    this.messageService.getMessageGroup(chatId)
+      .subscribe(
+          data => {
+          console.log(data);
+          this.messageGroup=data;
+        },
+        error => {
+          console.log(error);
+      });
+  }
+
+  sendMessage(messageOb:any){
+    messageOb.messageGroupID=this.messageGroup._id;
+    console.log(messageOb);
   }
 }

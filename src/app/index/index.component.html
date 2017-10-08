@@ -1,0 +1,61 @@
+<!-- Main -->
+<main>
+    <div  >
+    <div class="row mt-3 pt-5 justify-content-md-center">
+        <div class="col-md-3">
+          <!--Panel-->
+          <div class="card" >
+              <div class="card-header default-color white-text">
+                  Featured
+              </div>
+              <div class="card-body ">
+                  <div class="list-group">
+                    <a (click)="selectChat(messageGroup._id)" class="list-group-item list-group-item-action"  *ngFor="let messageGroup of messageGroups">
+                      <span *ngIf="currentUser.username!=messageGroup.friendname1">{{messageGroup.friendname1}}</span>
+                      <span *ngIf="currentUser.username!=messageGroup.friendname2">{{messageGroup.friendname2}}</span>
+                    </a>
+                </div>
+              </div>
+              
+          </div>
+          <!--/.Panel-->
+
+          
+        </div>
+        <div class="col-md-9">
+          <!--Panel-->
+          <div class="card" *ngIf="messageGroup">
+              <div class="card-header default-color white-text">
+                  Featured
+              </div>
+              <div class="card-body">
+                 
+              </div>
+              <div class="card-footer ">
+                  
+                  <form  #sendMessageForm="ngForm" novalidate 
+                  (ngSubmit)="sendMessage(sendMessageForm.value)">
+                  <div class="row justify-content-md-center">
+                    <div class="col col-md-10">
+                        <!-- <i class="fa fa-envelope prefix"></i> -->
+                        <input mdbActive type="text"  id="message" placeholder="Type your message" 
+                        name="message"
+                         #message="ngModel" [(ngModel)]="messageText" required>
+                        <!-- <label class="active" for="message">Type your message</label> -->
+                    </div>
+                    <div class="col col-md-2">
+                        <!-- <a class="btn btn-primary btn-lg waves-light" mdbRippleRadius>Send</a> -->
+                        <button class="btn btn-default waves-light" mdbRippleRadius type="submit" 
+                         [disabled]="!sendMessageForm.form.valid"
+                        >Send</button>
+                    </div>
+                    </div>
+                </form>
+              </div>
+          </div>
+          <!--/.Panel-->
+        </div>
+      </div>
+    </div>
+</main>
+<!-- /.Main -->

@@ -32,6 +32,10 @@ var MessageService = /** @class */ (function () {
         return this.http.put('/api/createNewMessageGroup/' + friendId + '/' + this.authService.getCurrentUserId(), null, this.authService.getHTTPHeader())
             .map(function (res) { return res.json(); });
     };
+    MessageService.prototype.getMessageGroup = function (id) {
+        return this.http.get('/api/getMessageGroup/' + id, this.authService.getHTTPHeader())
+            .map(function (res) { return res.json(); });
+    };
     MessageService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */]) === "function" && _b || Object])
@@ -40,7 +44,7 @@ var MessageService = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/message.service.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/message.service.js.map
 
 /***/ }),
 
@@ -88,7 +92,7 @@ var UserService = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/user.service.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/user.service.js.map
 
 /***/ }),
 
@@ -123,7 +127,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/main.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/main.js.map
 
 /***/ }),
 
@@ -163,7 +167,7 @@ var AppComponent = /** @class */ (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/app.component.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/app.component.js.map
 
 /***/ }),
 
@@ -171,22 +175,22 @@ var AppComponent = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__register_register_component__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__auth_service__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__user_service__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__message_service__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login_login_component__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__index_index_component__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__header_header_component__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular_bootstrap_md__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__equal_validator_directive__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register_component__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__auth_service__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__user_service__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__message_service__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login_login_component__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__index_index_component__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__header_header_component__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser_animations__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular_bootstrap_md__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__equal_validator_directive__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__(235);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -219,51 +223,51 @@ var ROUTES = [
     },
     {
         path: 'register',
-        component: __WEBPACK_IMPORTED_MODULE_6__register_register_component__["a" /* RegisterComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_5__register_register_component__["a" /* RegisterComponent */]
     },
     {
         path: 'login',
-        component: __WEBPACK_IMPORTED_MODULE_10__login_login_component__["a" /* LoginComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */]
     },
     {
         path: 'index',
-        component: __WEBPACK_IMPORTED_MODULE_11__index_index_component__["a" /* IndexComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_10__index_index_component__["a" /* IndexComponent */]
     },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__index_index_component__["a" /* IndexComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__equal_validator_directive__["a" /* EqualValidatorDirective */]
+                __WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__index_index_component__["a" /* IndexComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__equal_validator_directive__["a" /* EqualValidator */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(ROUTES),
-                __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_14_angular_bootstrap_md__["a" /* MDBBootstrapModule */].forRoot()
+                __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(ROUTES),
+                __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_13_angular_bootstrap_md__["a" /* MDBBootstrapModule */].forRoot()
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_7__auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_8__user_service__["a" /* UserService */],
-                __WEBPACK_IMPORTED_MODULE_9__message_service__["a" /* MessageService */]
+                __WEBPACK_IMPORTED_MODULE_6__auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_7__user_service__["a" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_8__message_service__["a" /* MessageService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]],
-            schemas: [__WEBPACK_IMPORTED_MODULE_2__angular_core__["c" /* NO_ERRORS_SCHEMA */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */]],
+            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* NO_ERRORS_SCHEMA */]]
         })
     ], AppModule);
     return AppModule;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/app.module.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/app.module.js.map
 
 /***/ }),
 
@@ -271,9 +275,9 @@ var AppModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EqualValidatorDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(43);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EqualValidator; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -288,40 +292,53 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 
 
-var EqualValidatorDirective = /** @class */ (function () {
-    function EqualValidatorDirective(validateEqual) {
+var EqualValidator = /** @class */ (function () {
+    function EqualValidator(validateEqual) {
         this.validateEqual = validateEqual;
     }
-    EqualValidatorDirective_1 = EqualValidatorDirective;
-    EqualValidatorDirective.prototype.validate = function (c) {
-        // self value
-        var v = c.value;
-        // control vlaue
-        var e = c.root.get(this.validateEqual);
-        // value not equal
-        if (e && v !== e.value) {
-            return {
-                validateEqual: { valid: false }
-            };
+    EqualValidator_1 = EqualValidator;
+    EqualValidator.prototype.validate = function (c) {
+        if (c.value) {
+            var self = c.value.trim();
+            var e = c.root.get(this.validateEqual);
+            //console.log(c.value);
+            if (e.value) {
+                var other = e.value.trim();
+                if (self != '' && other != '') {
+                    if (self === other) {
+                        if (e.errors['validateEqual'] != null) {
+                            delete e.errors['validateEqual'];
+                        }
+                        if (c.errors['validateEqual'] != null) {
+                            delete c.errors['validateEqual'];
+                        }
+                        if (!Object.keys(e.errors).length)
+                            e.setErrors(null);
+                        if (!Object.keys(c.errors).length)
+                            c.setErrors(null);
+                    }
+                    else {
+                        return { validateEqual: { valid: false } };
+                    }
+                }
+            }
         }
-        console.log('success');
-        return null;
     };
-    EqualValidatorDirective = EqualValidatorDirective_1 = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* Directive */])({
-            selector: '[validateEqual][ngModel]',
+    EqualValidator = EqualValidator_1 = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Directive */])({
+            selector: '[validateEqual][formControlName],[validateEqual][formControl],[validateEqual][ngModel]',
             providers: [
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_forms__["b" /* NG_VALIDATORS */], useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* forwardRef */])(function () { return EqualValidatorDirective_1; }), multi: true }
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALIDATORS */], useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* forwardRef */])(function () { return EqualValidator_1; }), multi: true }
             ]
         }),
-        __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Attribute */])('validateEqual')),
+        __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Attribute */])('validateEqual')),
         __metadata("design:paramtypes", [String])
-    ], EqualValidatorDirective);
-    return EqualValidatorDirective;
-    var EqualValidatorDirective_1;
+    ], EqualValidator);
+    return EqualValidator;
+    var EqualValidator_1;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/equal-validator.directive.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/equal-validator.directive.js.map
 
 /***/ }),
 
@@ -376,7 +393,7 @@ var HeaderComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/header.component.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/header.component.js.map
 
 /***/ }),
 
@@ -410,16 +427,18 @@ var IndexComponent = /** @class */ (function () {
         this.authService = authService;
         this.router = router;
         this.messageService = messageService;
-        this.users = [];
+        this.messageGroups = [];
+        this.currentUser = this.authService.getCurrentUser();
+        this.messageText = '';
+        this.messageGroup = undefined;
     }
     IndexComponent.prototype.ngOnInit = function () {
         var _this = this;
         // get users from secure api end point
         if (this.authService.isLoggedIn()) {
-            this.userService.getUsers()
+            this.userService.getAllFriends()
                 .subscribe(function (users) {
-                _this.users = users;
-                console.log(users);
+                _this.messageGroups = users.messageGroups;
             }, function (error) {
                 console.log(error);
             });
@@ -436,8 +455,19 @@ var IndexComponent = /** @class */ (function () {
             console.log(error);
         });
     };
-    IndexComponent.prototype.click1 = function () {
-        console.log('gf');
+    IndexComponent.prototype.selectChat = function (chatId) {
+        var _this = this;
+        this.messageService.getMessageGroup(chatId)
+            .subscribe(function (data) {
+            console.log(data);
+            _this.messageGroup = data;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    IndexComponent.prototype.sendMessage = function (messageOb) {
+        messageOb.messageGroupID = this.messageGroup._id;
+        console.log(messageOb);
     };
     IndexComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
@@ -451,7 +481,7 @@ var IndexComponent = /** @class */ (function () {
     var _a, _b, _c, _d;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/index.component.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/index.component.js.map
 
 /***/ }),
 
@@ -517,7 +547,7 @@ var LoginComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/login.component.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/login.component.js.map
 
 /***/ }),
 
@@ -546,15 +576,19 @@ var RegisterComponent = /** @class */ (function () {
         this.authService = authService;
         this.router = router;
         this.users = [];
-        this.model = {};
+        this.model = { email: '', username: '', password: '', confirmPassword: '' };
+        this.message = '';
     }
-    RegisterComponent.prototype.ngOnInit = function () {
-    };
-    RegisterComponent.prototype.register = function () {
+    RegisterComponent.prototype.register = function (model) {
         var _this = this;
-        this.authService.register(this.model)
+        this.authService.register(model)
             .subscribe(function (data) {
-            _this.router.navigate(['/login']);
+            if (data.success) {
+                _this.router.navigate(['/login']);
+            }
+            else {
+                _this.message = data.message;
+            }
         }, function (error) {
             console.log(error);
         });
@@ -571,7 +605,7 @@ var RegisterComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/register.component.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/register.component.js.map
 
 /***/ }),
 
@@ -587,7 +621,7 @@ var RegisterComponent = /** @class */ (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/environment.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/environment.js.map
 
 /***/ }),
 
@@ -702,7 +736,7 @@ var AuthService = /** @class */ (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/auth.service.js.map
+//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/auth.service.js.map
 
 /***/ }),
 
@@ -723,7 +757,7 @@ module.exports = ""
 /***/ 408:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/*html,body{height:100%;}\r\n.m100 {\r\n    height:100%;\r\n    min-height:100%;\r\n}*/"
 
 /***/ }),
 
@@ -744,7 +778,7 @@ module.exports = ""
 /***/ 411:
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<router-outlet></router-outlet>"
+module.exports = "<app-header></app-header>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -758,7 +792,7 @@ module.exports = "<mdb-navbar SideClass=\"navbar fixed-top navbar-expand-lg navb
 /***/ 413:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<!-- Main -->\r\n<main>\r\n    <div  >\r\n    <div class=\"row mt-3 pt-5 justify-content-md-center\">\r\n        <div class=\"col-md-3\">\r\n          <!--Panel-->\r\n          <div class=\"card\" >\r\n              <div class=\"card-header default-color white-text\">\r\n                  Featured\r\n              </div>\r\n              <div class=\"card-body \">\r\n                  <div class=\"list-group\">\r\n                    <a (click)=\"selectChat(messageGroup._id)\" class=\"list-group-item list-group-item-action\"  *ngFor=\"let messageGroup of messageGroups\">\r\n                      <span *ngIf=\"currentUser.username!=messageGroup.friendname1\">{{messageGroup.friendname1}}</span>\r\n                      <span *ngIf=\"currentUser.username!=messageGroup.friendname2\">{{messageGroup.friendname2}}</span>\r\n                    </a>\r\n                </div>\r\n              </div>\r\n              \r\n          </div>\r\n          <!--/.Panel-->\r\n\r\n          \r\n        </div>\r\n        <div class=\"col-md-9\">\r\n          <!--Panel-->\r\n          <div class=\"card\" *ngIf=\"messageGroup\">\r\n              <div class=\"card-header default-color white-text\">\r\n                  Featured\r\n              </div>\r\n              <div class=\"card-body\">\r\n                 \r\n              </div>\r\n              <div class=\"card-footer \">\r\n                  \r\n                  <form  #sendMessageForm=\"ngForm\" novalidate \r\n                  (ngSubmit)=\"sendMessage(sendMessageForm.value)\">\r\n                  <div class=\"row justify-content-md-center\">\r\n                    <div class=\"col col-md-10\">\r\n                        <!-- <i class=\"fa fa-envelope prefix\"></i> -->\r\n                        <input mdbActive type=\"text\"  id=\"message\" placeholder=\"Type your message\" \r\n                        name=\"message\"\r\n                         #message=\"ngModel\" [(ngModel)]=\"messageText\" required>\r\n                        <!-- <label class=\"active\" for=\"message\">Type your message</label> -->\r\n                    </div>\r\n                    <div class=\"col col-md-2\">\r\n                        <!-- <a class=\"btn btn-primary btn-lg waves-light\" mdbRippleRadius>Send</a> -->\r\n                        <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" \r\n                         [disabled]=\"!sendMessageForm.form.valid\"\r\n                        >Send</button>\r\n                    </div>\r\n                    </div>\r\n                </form>\r\n              </div>\r\n          </div>\r\n          <!--/.Panel-->\r\n        </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
 
 /***/ }),
 
@@ -772,7 +806,7 @@ module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n 
 /***/ 415:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row mt-5 pt-5 justify-content-md-center\">\r\n            <div class=\"col-md-6 \">\r\n      <!-- Login form -->\r\n      <form (ngSubmit)=\"register()\" #registerForm=\"ngForm\">\r\n          <p class=\"h5 text-center mb-4\">Sign up</p>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n              \r\n              <input   #email=\"ngModel\" type=\"text\" required name=\"email\" id=\"email\" class=\"form-control\"\r\n              [(ngModel)]=\"model.email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\" mdbActive >\r\n              <label for=\"email\" class=\"active\">Your email</label>\r\n              <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" >\r\n\r\n                <small *ngIf=\"email.errors.required\" class=\"text-danger\">Email is required.</small>\r\n                \r\n                <small *ngIf=\"email.errors.pattern\" class=\"text-danger\">Please enter a valid email address.</small>\r\n\r\n              </div>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-user prefix grey-text\"></i>\r\n              \r\n              <input   #username=\"ngModel\" type=\"text\" required name=\"username\" id=\"username\" class=\"form-control\"\r\n              [(ngModel)]=\"model.username\"  mdbActive >\r\n              <label for=\"username\" class=\"active\">Your username</label>\r\n              \r\n              \r\n               <small *ngIf=\"username.invalid && (username.dirty || username.touched) && username.errors.required\" class=\"text-danger\">Username is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"password\" id=\"password\" validateEqual=\"confirmPassword\"\r\n               #password=\"ngModel\" required class=\"form-control\"\r\n              [(ngModel)]=\"model.password\" mdbActive>\r\n              <label for=\"password\">Your password</label>\r\n              \r\n               <small *ngIf=\"password.invalid && (password.dirty || password.touched) && password.errors.required\" class=\"text-danger\">Password is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"confirmPassword\" id=\"confirmPassword\"  validateEqual=\"password\"\r\n               #confirmPassword=\"ngModel\" required class=\"form-control\" [(ngModel)]=\"model.confirmPassword\"\r\n               mdbActive>\r\n              <label for=\"confirmPassword\">Confirm password</label>\r\n              \r\n               <small *ngIf=\"confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.required\" class=\"text-danger\">Confirm Password is required.</small>\r\n\r\n               <small *ngIf=\"confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.validateEqual\" class=\"text-danger\">Password mismatch.</small>\r\n\r\n          </div>\r\n\r\n          <div class=\"text-center\">\r\n              <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" \r\n              [disabled]=\"!registerForm.form.valid\">Login</button>\r\n          </div>\r\n      </form>\r\n      <!-- Login form -->\r\n\r\n      </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
+module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row mt-5 pt-5 justify-content-md-center\">\r\n            <div class=\"col-md-6 \">\r\n      <!-- Login form -->\r\n      <form  #registerForm=\"ngForm\" novalidate (ngSubmit)=\"register(registerForm.value)\">\r\n          <p class=\"h5 text-center mb-4\">Sign up</p>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-envelope prefix grey-text\"></i>\r\n              \r\n              <input   #email=\"ngModel\" type=\"text\" required name=\"email\" id=\"email\" class=\"form-control\"\r\n              [(ngModel)]=\"model.email\" pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\" mdbActive >\r\n              <label for=\"email\" class=\"active\">Your email</label>\r\n              <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" >\r\n\r\n                <small *ngIf=\"email.errors.required\" class=\"text-danger\">Email is required.</small>\r\n                \r\n                <small *ngIf=\"email.errors.pattern\" class=\"text-danger\">Please enter a valid email address.</small>\r\n\r\n              </div>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-user prefix grey-text\"></i>\r\n              \r\n              <input   #username=\"ngModel\" type=\"text\" required name=\"username\" id=\"username\" class=\"form-control\"\r\n              [(ngModel)]=\"model.username\"  mdbActive >\r\n              <label for=\"username\" class=\"active\">Your username</label>\r\n              \r\n              \r\n               <small *ngIf=\"username.invalid && (username.dirty || username.touched) && username.errors.required\" class=\"text-danger\">Username is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"password\" id=\"password\" validateEqual=\"confirmPassword\" \r\n               #password=\"ngModel\" required class=\"form-control\"\r\n              [(ngModel)]=\"model.password\" mdbActive>\r\n              <label for=\"password\">Your password</label>\r\n              \r\n               <small *ngIf=\"password.invalid && (password.dirty || password.touched) && password.errors.required\" class=\"text-danger\">Password is required.</small>\r\n          </div>\r\n\r\n          <div class=\"md-form\">\r\n              <i class=\"fa fa-lock prefix grey-text\"></i>\r\n              <input  type=\"password\"  name=\"confirmPassword\" id=\"confirmPassword\"  validateEqual=\"password\" \r\n               #confirmPassword=\"ngModel\" required class=\"form-control\" [(ngModel)]=\"model.confirmPassword\"\r\n               mdbActive>\r\n              <label for=\"confirmPassword\">Confirm password</label>\r\n              \r\n               <small *ngIf=\"confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.required\" class=\"text-danger\">Confirm Password is required.</small>\r\n\r\n               <small *ngIf=\"confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.errors.validateEqual\" class=\"text-danger\">Password mismatch.</small>\r\n\r\n          </div>\r\n\r\n          <div class=\"text-center\">\r\n            <div><small *ngIf=\"message\" class=\"text-danger\">{{message}}</small></div>\r\n              <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\"  [disabled]=\"!registerForm.form.valid\"\r\n              >Sign up</button>\r\n          </div>\r\n      </form>\r\n      <!-- Login form -->\r\n\r\n      </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
 
 /***/ }),
 

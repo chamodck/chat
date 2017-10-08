@@ -4,7 +4,7 @@
     <div class="row mt-5 pt-5 justify-content-md-center">
             <div class="col-md-6 ">
       <!-- Login form -->
-      <form (ngSubmit)="register()" #registerForm="ngForm">
+      <form  #registerForm="ngForm" novalidate (ngSubmit)="register(registerForm.value)">
           <p class="h5 text-center mb-4">Sign up</p>
 
           <div class="md-form">
@@ -35,7 +35,7 @@
 
           <div class="md-form">
               <i class="fa fa-lock prefix grey-text"></i>
-              <input  type="password"  name="password" id="password" validateEqual="confirmPassword"
+              <input  type="password"  name="password" id="password" validateEqual="confirmPassword" 
                #password="ngModel" required class="form-control"
               [(ngModel)]="model.password" mdbActive>
               <label for="password">Your password</label>
@@ -45,7 +45,7 @@
 
           <div class="md-form">
               <i class="fa fa-lock prefix grey-text"></i>
-              <input  type="password"  name="confirmPassword" id="confirmPassword"  validateEqual="password"
+              <input  type="password"  name="confirmPassword" id="confirmPassword"  validateEqual="password" 
                #confirmPassword="ngModel" required class="form-control" [(ngModel)]="model.confirmPassword"
                mdbActive>
               <label for="confirmPassword">Confirm password</label>
@@ -57,8 +57,9 @@
           </div>
 
           <div class="text-center">
-              <button class="btn btn-default waves-light" mdbRippleRadius type="submit" 
-              [disabled]="!registerForm.form.valid">Login</button>
+            <div><small *ngIf="message" class="text-danger">{{message}}</small></div>
+              <button class="btn btn-default waves-light" mdbRippleRadius type="submit"  [disabled]="!registerForm.form.valid"
+              >Sign up</button>
           </div>
       </form>
       <!-- Login form -->
