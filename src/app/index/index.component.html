@@ -1,8 +1,8 @@
 <!-- Main -->
 <main>
-    <div  >
-    <div class="row mt-3 pt-5 justify-content-md-center">
-        <div class="col-md-3">
+    <div class="container" >
+    <div class="row justify-content-md-center">
+        <div class="col col-md-3">
           <!--Panel-->
           <div class="card" >
               <div class="card-header default-color white-text">
@@ -22,14 +22,18 @@
 
           
         </div>
-        <div class="col-md-9">
+        <div class="col col-md-9">
           <!--Panel-->
           <div class="card" *ngIf="messageGroup">
               <div class="card-header default-color white-text">
                   Featured
               </div>
               <div class="card-body">
-                 
+                
+                 <div *ngFor="let message of messageGroup.messages">
+
+                    {{message.text}}
+                 </div>
               </div>
               <div class="card-footer ">
                   

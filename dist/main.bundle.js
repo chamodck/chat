@@ -36,6 +36,10 @@ var MessageService = /** @class */ (function () {
         return this.http.get('/api/getMessageGroup/' + id, this.authService.getHTTPHeader())
             .map(function (res) { return res.json(); });
     };
+    MessageService.prototype.sendMessage = function (messageOb) {
+        return this.http.post('/api/sendMessage', messageOb, this.authService.getHTTPHeader())
+            .map(function (res) { return res.json(); });
+    };
     MessageService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__auth_service__["a" /* AuthService */]) === "function" && _b || Object])
@@ -44,7 +48,7 @@ var MessageService = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/message.service.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/message.service.js.map
 
 /***/ }),
 
@@ -92,7 +96,7 @@ var UserService = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/user.service.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/user.service.js.map
 
 /***/ }),
 
@@ -127,7 +131,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/main.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/main.js.map
 
 /***/ }),
 
@@ -167,7 +171,7 @@ var AppComponent = /** @class */ (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/app.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/app.component.js.map
 
 /***/ }),
 
@@ -267,7 +271,7 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/app.module.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/app.module.js.map
 
 /***/ }),
 
@@ -338,7 +342,7 @@ var EqualValidator = /** @class */ (function () {
     var EqualValidator_1;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/equal-validator.directive.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/equal-validator.directive.js.map
 
 /***/ }),
 
@@ -393,7 +397,7 @@ var HeaderComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/header.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/header.component.js.map
 
 /***/ }),
 
@@ -466,8 +470,16 @@ var IndexComponent = /** @class */ (function () {
         });
     };
     IndexComponent.prototype.sendMessage = function (messageOb) {
+        var _this = this;
         messageOb.messageGroupID = this.messageGroup._id;
-        console.log(messageOb);
+        messageOb.currentUserID = this.currentUser._id;
+        this.messageService.sendMessage(messageOb)
+            .subscribe(function (data) {
+            _this.messageGroup.messages.push(data);
+            _this.messageText = '';
+        }, function (error) {
+            console.log(error);
+        });
     };
     IndexComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
@@ -481,7 +493,7 @@ var IndexComponent = /** @class */ (function () {
     var _a, _b, _c, _d;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/index.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/index.component.js.map
 
 /***/ }),
 
@@ -547,7 +559,7 @@ var LoginComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/login.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/login.component.js.map
 
 /***/ }),
 
@@ -605,7 +617,7 @@ var RegisterComponent = /** @class */ (function () {
     var _a, _b;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/register.component.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/register.component.js.map
 
 /***/ }),
 
@@ -621,7 +633,7 @@ var RegisterComponent = /** @class */ (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/environment.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/environment.js.map
 
 /***/ }),
 
@@ -736,7 +748,7 @@ var AuthService = /** @class */ (function () {
     var _a;
 }());
 
-//# sourceMappingURL=C:/Users/chamod/Documents/node/chat/src/auth.service.js.map
+//# sourceMappingURL=C:/Users/Chamod/Documents/Node/chat/src/auth.service.js.map
 
 /***/ }),
 
@@ -778,21 +790,21 @@ module.exports = ""
 /***/ 411:
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\r\n<router-outlet></router-outlet>"
+module.exports = "\n<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 412:
 /***/ (function(module, exports) {
 
-module.exports = "<mdb-navbar SideClass=\"navbar fixed-top navbar-expand-lg navbar-dark bg-default scrolling-navbar\" [containerInside]=\"false\">\r\n    <logo>\r\n        <a class=\"logo navbar-brand\" href=\"#\"><strong>Navbar</strong></a>\r\n    </logo>\r\n    <links>\r\n        <!-- <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item active waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Home <span class=\"sr-only\">(current)</span></a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Features</a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Pricing</a>\r\n            </li>\r\n            <li class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\">Opinions</a>\r\n            </li>\r\n        </ul> -->\r\n        <ul class=\"navbar-nav\">\r\n            <li *ngIf=\"currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\" (click)=\"logout()\">Logout</a>\r\n            </li>\r\n           \r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/login']\" class=\"nav-link \">\r\n\t\t\t\t  Sign in\r\n\t\t\t\t</a>\r\n            </li>\r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/register']\" class=\"nav-link \" >\r\n\t\t\t\t  Sign up\r\n\t\t\t\t</a>\r\n            </li>\r\n        </ul>\r\n    </links>\r\n</mdb-navbar>\r\n\r\n\r\n\t\t\t\t\t\r\n<!--   <button *ngIf=\"currentUser\" (click)=\"logout()\" > Logout </button>\r\n  <button *ngIf=\"!currentUser\" (click)=\"login()\" > Login </button>\r\n  <button *ngIf=\"!currentUser\" (click)=\"register()\" > Register </button> -->\r\n "
+module.exports = "<!-- <mdb-navbar SideClass=\"navbar fixed-top navbar-expand-lg navbar-dark bg-default scrolling-navbar\" [containerInside]=\"false\">\r\n    <logo>\r\n        <a class=\"logo navbar-brand\" href=\"#\"><strong>Navbar</strong></a>\r\n    </logo>\r\n    <links>\r\n\r\n        <ul class=\"navbar-nav\">\r\n            <li *ngIf=\"currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a class=\"nav-link\" (click)=\"logout()\">Logout</a>\r\n            </li>\r\n           \r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/login']\" class=\"nav-link \">\r\n\t\t\t\t  Sign in\r\n\t\t\t\t</a>\r\n            </li>\r\n            <li *ngIf=\"!currentUser\" class=\"nav-item waves-light\" mdbRippleRadius>\r\n                <a [routerLink]=\"['/register']\" class=\"nav-link \" >\r\n\t\t\t\t  Sign up\r\n\t\t\t\t</a>\r\n            </li>\r\n        </ul>\r\n    </links>\r\n</mdb-navbar>\r\n -->\r\n"
 
 /***/ }),
 
 /***/ 413:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Main -->\r\n<main>\r\n    <div  >\r\n    <div class=\"row mt-3 pt-5 justify-content-md-center\">\r\n        <div class=\"col-md-3\">\r\n          <!--Panel-->\r\n          <div class=\"card\" >\r\n              <div class=\"card-header default-color white-text\">\r\n                  Featured\r\n              </div>\r\n              <div class=\"card-body \">\r\n                  <div class=\"list-group\">\r\n                    <a (click)=\"selectChat(messageGroup._id)\" class=\"list-group-item list-group-item-action\"  *ngFor=\"let messageGroup of messageGroups\">\r\n                      <span *ngIf=\"currentUser.username!=messageGroup.friendname1\">{{messageGroup.friendname1}}</span>\r\n                      <span *ngIf=\"currentUser.username!=messageGroup.friendname2\">{{messageGroup.friendname2}}</span>\r\n                    </a>\r\n                </div>\r\n              </div>\r\n              \r\n          </div>\r\n          <!--/.Panel-->\r\n\r\n          \r\n        </div>\r\n        <div class=\"col-md-9\">\r\n          <!--Panel-->\r\n          <div class=\"card\" *ngIf=\"messageGroup\">\r\n              <div class=\"card-header default-color white-text\">\r\n                  Featured\r\n              </div>\r\n              <div class=\"card-body\">\r\n                 \r\n              </div>\r\n              <div class=\"card-footer \">\r\n                  \r\n                  <form  #sendMessageForm=\"ngForm\" novalidate \r\n                  (ngSubmit)=\"sendMessage(sendMessageForm.value)\">\r\n                  <div class=\"row justify-content-md-center\">\r\n                    <div class=\"col col-md-10\">\r\n                        <!-- <i class=\"fa fa-envelope prefix\"></i> -->\r\n                        <input mdbActive type=\"text\"  id=\"message\" placeholder=\"Type your message\" \r\n                        name=\"message\"\r\n                         #message=\"ngModel\" [(ngModel)]=\"messageText\" required>\r\n                        <!-- <label class=\"active\" for=\"message\">Type your message</label> -->\r\n                    </div>\r\n                    <div class=\"col col-md-2\">\r\n                        <!-- <a class=\"btn btn-primary btn-lg waves-light\" mdbRippleRadius>Send</a> -->\r\n                        <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" \r\n                         [disabled]=\"!sendMessageForm.form.valid\"\r\n                        >Send</button>\r\n                    </div>\r\n                    </div>\r\n                </form>\r\n              </div>\r\n          </div>\r\n          <!--/.Panel-->\r\n        </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
+module.exports = "<!-- Main -->\r\n<main>\r\n    <div class=\"container\" >\r\n    <div class=\"row justify-content-md-center\">\r\n        <div class=\"col col-md-3\">\r\n          <!--Panel-->\r\n          <div class=\"card\" >\r\n              <div class=\"card-header default-color white-text\">\r\n                  Featured\r\n              </div>\r\n              <div class=\"card-body \">\r\n                  <div class=\"list-group\">\r\n                    <a (click)=\"selectChat(messageGroup._id)\" class=\"list-group-item list-group-item-action\"  *ngFor=\"let messageGroup of messageGroups\">\r\n                      <span *ngIf=\"currentUser.username!=messageGroup.friendname1\">{{messageGroup.friendname1}}</span>\r\n                      <span *ngIf=\"currentUser.username!=messageGroup.friendname2\">{{messageGroup.friendname2}}</span>\r\n                    </a>\r\n                </div>\r\n              </div>\r\n              \r\n          </div>\r\n          <!--/.Panel-->\r\n\r\n          \r\n        </div>\r\n        <div class=\"col col-md-9\">\r\n          <!--Panel-->\r\n          <div class=\"card\" *ngIf=\"messageGroup\">\r\n              <div class=\"card-header default-color white-text\">\r\n                  Featured\r\n              </div>\r\n              <div class=\"card-body\">\r\n                \r\n                 <div *ngFor=\"let message of messageGroup.messages\">\r\n\r\n                    {{message.text}}\r\n                 </div>\r\n              </div>\r\n              <div class=\"card-footer \">\r\n                  \r\n                  <form  #sendMessageForm=\"ngForm\" novalidate \r\n                  (ngSubmit)=\"sendMessage(sendMessageForm.value)\">\r\n                  <div class=\"row justify-content-md-center\">\r\n                    <div class=\"col col-md-10\">\r\n                        <!-- <i class=\"fa fa-envelope prefix\"></i> -->\r\n                        <input mdbActive type=\"text\"  id=\"message\" placeholder=\"Type your message\" \r\n                        name=\"message\"\r\n                         #message=\"ngModel\" [(ngModel)]=\"messageText\" required>\r\n                        <!-- <label class=\"active\" for=\"message\">Type your message</label> -->\r\n                    </div>\r\n                    <div class=\"col col-md-2\">\r\n                        <!-- <a class=\"btn btn-primary btn-lg waves-light\" mdbRippleRadius>Send</a> -->\r\n                        <button class=\"btn btn-default waves-light\" mdbRippleRadius type=\"submit\" \r\n                         [disabled]=\"!sendMessageForm.form.valid\"\r\n                        >Send</button>\r\n                    </div>\r\n                    </div>\r\n                </form>\r\n              </div>\r\n          </div>\r\n          <!--/.Panel-->\r\n        </div>\r\n      </div>\r\n    </div>\r\n</main>\r\n<!-- /.Main -->\r\n"
 
 /***/ }),
 

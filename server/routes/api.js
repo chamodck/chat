@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 var jwt    = require('jsonwebtoken');
 var User   = require('../models/users');
-//var Message   = require('../models/Messages');
+var Message   = require('../models/Messages');
 var MessageGroup   = require('../models/MessageGroups');
 var config = require('../config'); // get our config file
 
+var mongoose = require('mongoose');
 
 
 // route to authenticate a user (POST http://localhost:8080/api/authenticate)
@@ -136,7 +137,7 @@ router.param('messageGroupID', function(req, res, next, id) {
 router.get('/getMessageGroup/:messageGroupID', function(req, res, next) {
     MessageGroup
       .findById(req.messageGroupID)
-      .populate('members','messages') // only works if we pushed refs to children
+      .populate('messages') // only works if we pushed refs to children
       .exec(function (err, messageGroup) {
         //if (err) return handleError(err);
         if (err) { return next(err); }
@@ -250,5 +251,35 @@ router.param('friend', function(req, res, next, id) {
     
     res.json(Group);
   });
+
+
+router.post('/sendMessage', function(req, res) {
+  
+  var query = MessageGroup.findById(req.body.messageGroupID);
+
+  query.exec(function (err, messageGroup){
+    if (err) { return next(err); }
+    if (!messageGroup) { return next(new Error('can\'t find messageGroup')); }
+
+    var message=new Message({
+      to:mongoose.Types.ObjectId(messageGroup._id),
+      from:mongoose.Types.ObjectId(req.body.currentUserID),
+      text:req.body.message
+    });
+
+    message.save(function(err) {
+      if (err) throw err;  
+    });
+
+    messageGroup.messages.push(message);
+    
+    messageGroup.save(function(err) {
+      if (err) throw err;
+    });
+
+    res.json(message);
+
+  });
+});
 
 module.exports = router;

@@ -58,6 +58,17 @@ export class IndexComponent implements OnInit {
 
   sendMessage(messageOb:any){
     messageOb.messageGroupID=this.messageGroup._id;
-    console.log(messageOb);
+    messageOb.currentUserID=this.currentUser._id;
+
+    this.messageService.sendMessage(messageOb)
+      .subscribe(
+          data => {
+          
+          this.messageGroup.messages.push(data);
+          this.messageText='';
+        },
+        error => {
+          console.log(error);
+      });
   }
 }

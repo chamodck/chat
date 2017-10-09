@@ -18,4 +18,9 @@ export class MessageService {
   		.map(res => res.json());
   }
 
+  sendMessage(messageOb:any){
+  	return this.http.post('/api/sendMessage', messageOb,this.authService.getHTTPHeader())
+  	.map(res => res.json());
+  }
+
 }
