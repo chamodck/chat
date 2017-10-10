@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 import { MessageService } from './message.service';
+import { SocketioService } from './socketio.service';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
@@ -63,7 +64,8 @@ const ROUTES = [
   providers: [
     AuthService,
     UserService,
-    MessageService
+    MessageService,
+    SocketioService
   ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]

@@ -11,6 +11,8 @@ var config = require('./server/config'); // get our config file
 
 var app = express();
 
+
+
 // configuration ===============================================================
 mongoose.connect(config.url); // connect to our database
 app.set('superSecret', config.secret); // secret variable
