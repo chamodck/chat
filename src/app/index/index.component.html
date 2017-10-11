@@ -43,6 +43,7 @@
                     <div class="col col-md-10">
                         <!-- <i class="fa fa-envelope prefix"></i> -->
                         <input mdbActive type="text"  id="message" placeholder="Type your message" 
+                        (ngModelChange)="messageOnChange($event)"
                         name="message"
                          #message="ngModel" [(ngModel)]="messageText" required>
                         <!-- <label class="active" for="message">Type your message</label> -->

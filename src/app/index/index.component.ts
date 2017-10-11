@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy  } from '@angular/core';
 import { UserService } from '../user.service';
 import { AuthService } from '../auth.service';
 import { MessageService } from '../message.service';
@@ -11,7 +11,7 @@ import * as io from 'socket.io-client';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit ,OnDestroy {
   constructor(private userService: UserService,private authService: AuthService,
     private router: Router,private messageService: MessageService,private socketioService:SocketioService) { 
     this.socket = io();
@@ -22,6 +22,10 @@ export class IndexComponent implements OnInit {
   messageText:String = '';
   messageGroup:any=undefined;
   private socket: SocketIOClient.Socket;
+  connection;
+  isTyping:boolean=false;
+  typingTimer:any;
+  timeOut:number=5000;
 
   ngOnInit() {
   	// get users from secure api end point
@@ -36,6 +40,14 @@ export class IndexComponent implements OnInit {
     }else{
       this.router.navigate(['/login']);
     }
+
+    this.connection = this.socketioService.getMessages().subscribe(message => {
+      this.messageGroup.messages.push(message);
+    })
+  }
+
+  ngOnDestroy() {
+    this.connection.unsubscribe();
   }
 
   createNewMessageGroup(friendId) {
@@ -53,7 +65,7 @@ export class IndexComponent implements OnInit {
     this.messageService.getMessageGroup(chatId)
       .subscribe(
           data => {
-          console.log(data);
+          
           this.messageGroup=data;
         },
         error => {
@@ -69,7 +81,7 @@ export class IndexComponent implements OnInit {
       .subscribe(
           data => {
           
-          this.messageGroup.messages.push(data);
+          //this.messageGroup.messages.push(data);
           this.messageText='';
 
           this.socketioService.sendMessage(data);
@@ -80,8 +92,28 @@ export class IndexComponent implements OnInit {
       });
   }
 
-  this.socket.on('gistSaved', function(gist: Gist){
-      self.toasterService.pop('success', 'NEW GIST SAVED',
-          'A gist with title \"' + gist.title + '\" has just been shared' + ' with stack: ' + gist.technologies);
-  });
+  messageOnChange(value) {
+    
+    if(!this.isTyping){
+      this.isTyping=true;
+      this.startTyping();
+    }
+
+    clearTimeout(this.typingTimer);
+    this.typingTimer =setTimeout(()=>{    
+          this.finishTyping();
+     },this.timeOut);
+    
+  }
+
+  startTyping(){
+    
+  }
+
+  finishTyping(){
+    
+    this.isTyping=false;
+    
+  }
+
 }
